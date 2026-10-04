@@ -1,0 +1,1296 @@
+/*
+   Índice:
+   1.  Variables
+   2.  Base
+   3.  Componentes compartidos (grillas, imágenes con texto, bloque intro)
+   4.  Botones
+   5.  Tarjetas
+   6.  Ajustes a Bootstrap (acordeón)
+   7.  Navbar
+   8.  Hero
+   9.  Información general
+   10. Conoce el programa
+   11. Plan de estudios
+   12. Inversión
+   13. Perfil y proyección
+   14. Vida universitaria
+   15. Preguntas frecuentes
+   16. Footer
+   17. Tablet (≥ 768px)
+   18. Escritorio (≥ 992px)
+   19. Accesibilidad: movimiento reducido
+*/
+
+
+/*
+   1. VARIABLES
+*/
+:root {
+  --color-primario: #0b6b3a;
+  --color-primario-oscuro: #084f2b;
+  --color-secundario: #f2b705;
+  --color-texto: #1f2a24;
+  --color-texto-suave: #414b45;
+  --color-fondo-suave: #e6fff0;
+  --color-blanco: #ffffff;
+  --color-footer: #0f2a1c;
+
+  /* Medidas y efectos */
+  --radio: 1rem;
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --sombra-tarjeta: 0 6px 20px rgba(0, 0, 0, 0.15);
+  --sombra-hover: 0 10px 24px rgba(0, 0, 0, 0.14);
+  --transicion: 0.3s ease;
+  --alto-navbar: 72px;
+
+  /* Color de los enlaces de texto (Bootstrap los pinta con esta variable) */
+  --bs-link-color-rgb: 11, 107, 58;
+  --bs-link-hover-color-rgb: 8, 79, 43;
+}
+
+
+/*
+   2. BASE
+*/
+html {
+  scroll-behavior: smooth;
+  /* desplazamiento suave con los enlaces #... */
+  scroll-padding-top: var(--alto-navbar);
+  /* que el navbar no tape el título al llegar */
+}
+
+body {
+  color: var(--color-texto);
+}
+
+/* Las imágenes nunca se salen de su caja */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Caja central con ancho máximo (reemplaza al .container de Bootstrap) */
+.contenedor {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Espacio arriba y abajo de cada sección */
+.seccion {
+  padding-block: 3rem;
+}
+
+/* Fondos alternados para separar visualmente las secciones */
+.programa,
+.inversion,
+.vida {
+  background-color: var(--color-fondo-suave);
+}
+
+/* Encabezado de cada sección: título + texto introductorio */
+.seccion__encabezado {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.seccion__titulo {
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--color-primario-oscuro);
+}
+
+/* Línea decorativa debajo del título */
+.seccion__titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  background-color: var(--color-secundario);
+  border-radius: 2px;
+}
+
+.seccion__intro {
+  margin: 1rem 0 0;
+  color: var(--color-texto-suave);
+}
+
+/* Subtítulo de un bloque dentro de una sección */
+.bloque__titulo {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primario-oscuro);
+  margin: 3rem 0 1.5rem;
+}
+
+/* Imágenes de contenido */
+.foto {
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+/* Texto invisible en pantalla, pero que sí lee el lector de pantalla */
+.texto-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/*
+   3. COMPONENTES COMPARTIDOS
+*/
+
+/* Grilla base: en mobile una sola columna.
+   Cada grilla define sus columnas de tablet y escritorio en las secciones 17 y 18. */
+.grilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* para las grillas que son <ul> */
+}
+
+/* Imagen que llena su caja sin deformarse (collage y mapa del footer) */
+.collage__item img,
+.footer__mapa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Texto encima de una imagen, con degradado para que se lea */
+.collage__texto,
+.footer__mapa-texto {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 1rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-blanco);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}
+
+/* Zoom suave de la imagen al pasar el mouse */
+@media (hover: hover) {
+
+  .collage__item:hover img,
+  .footer__mapa:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Bloque imagen + texto (Conoce el programa y Perfil profesional).
+   minmax(0, 1fr): un "1fr" normal nunca es más pequeño que su contenido;
+   como la imagen mide 800px, la columna se estiraba y la página se salía. */
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "imagen"
+    "texto";
+  gap: 1.5rem 2rem;
+  align-items: center;
+}
+
+.intro__imagen {
+  grid-area: imagen;
+}
+
+.intro__texto {
+  grid-area: texto;
+}
+
+.intro__subtitulo {
+  font-weight: 700;
+  color: var(--color-primario-oscuro);
+  margin-bottom: 1rem;
+}
+
+.intro__texto p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+
+/*
+   4. BOTONES
+*/
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  transition: background-color var(--transicion), color var(--transicion),
+    border-color var(--transicion), transform var(--transicion);
+}
+
+.boton:focus-visible {
+  outline: 3px solid rgba(11, 107, 58, 0.4);
+  outline-offset: 2px;
+}
+
+/* Espacio entre el ícono y el texto de cualquier botón */
+.boton .bi {
+  margin-right: 0.4rem;
+}
+
+.boton--primario {
+  color: var(--color-blanco);
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.boton--primario:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-primario-oscuro);
+  border-color: var(--color-primario-oscuro);
+}
+
+/* Para fondos oscuros, como el hero */
+.boton--claro {
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-blanco);
+}
+
+.boton--claro:hover {
+  color: var(--color-primario-oscuro);
+  background-color: var(--color-blanco);
+}
+
+.boton--secundario {
+  color: var(--color-texto);
+  background-color: var(--color-secundario);
+  border-color: var(--color-secundario);
+}
+
+.boton--secundario:hover {
+  color: var(--color-primario-oscuro);
+  background-color: var(--color-blanco);
+  border-color: var(--color-blanco);
+}
+
+
+/*
+   5. TARJETAS
+   .tarjeta es la base de las tarjetas de Programa, Inversión, Perfil y Vida.
+   .tarjeta-dato (las cifras) comparte la caja, pero no los bordes verdes.
+*/
+
+/* Caja: fondo blanco, bordes redondeados y sombra */
+.tarjeta,
+.tarjeta-dato {
+  padding: 1.5rem;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+/* Bordes verdes a los lados */
+.tarjeta {
+  border: 5px solid var(--color-primario);
+}
+
+/* Ícono grande */
+.tarjeta__icono {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--color-primario);
+  margin-bottom: 0.75rem;
+  transition: transform var(--transicion);
+}
+
+/* Título con la línea amarilla debajo */
+.tarjeta__titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primario-oscuro);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-secundario);
+}
+
+.tarjeta p {
+  margin-bottom: 0;
+  color: var(--color-texto-suave);
+}
+
+/* Tarjetas con ícono y texto centrado (Perfil y Vida universitaria) */
+.tarjeta--centrada {
+  text-align: center;
+}
+
+/* Hover solo con mouse: en el celular el efecto se queda "pegado" al tocar */
+@media (hover: hover) {
+
+  .tarjeta:hover,
+  .tarjeta-dato:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+  }
+
+  .tarjeta:hover .tarjeta__icono {
+    transform: scale(1.1);
+  }
+}
+
+
+/*
+   6. AJUSTES A BOOTSTRAP — ACORDEÓN
+   Bootstrap permite cambiar sus colores con variables.
+*/
+.accordion {
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(11, 107, 58, 0.25);
+  --bs-accordion-btn-active-icon: var(--bs-accordion-btn-icon);
+  --bs-accordion-border-radius: var(--radio);
+  --bs-accordion-inner-border-radius: calc(var(--radio) - 1px);
+  /* Barras en verde (plan de estudios y preguntas frecuentes) */
+  --bs-accordion-btn-bg: var(--color-primario);
+  /* cerrado: fondo */
+  --bs-accordion-btn-color: var(--color-blanco);
+  /* cerrado: texto */
+  --bs-accordion-active-bg: var(--color-primario-oscuro);
+  /* abierto: fondo */
+  --bs-accordion-active-color: var(--color-blanco);
+  /* abierto: texto */
+  --bs-accordion-border-color: rgba(255, 255, 255, 0.25);
+  /* líneas entre barras */
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.accordion-button {
+  font-weight: 600;
+}
+
+/* La flecha es una imagen oscura: este filtro la vuelve blanca */
+.accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+
+
+/*
+   7. NAVBAR
+*/
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: var(--color-blanco);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+  min-height: var(--alto-navbar);
+}
+
+.navbar__contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__marca {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar__nombre {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-primario-oscuro);
+}
+
+.navbar__menu .nav-link {
+  padding: 0.75rem 0;
+  font-weight: 500;
+  color: var(--color-texto);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  transition: color var(--transicion);
+}
+
+.navbar__menu .nav-link:hover,
+.navbar__menu .nav-link:focus {
+  color: var(--color-primario);
+}
+
+
+/*
+   8. HERO
+*/
+.hero {
+  color: var(--color-blanco);
+  background-color: var(--color-footer);
+  background-image:
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.1) 35%,
+      rgba(0, 0, 0, 0.8) 100%),
+    url("../Imagenes/fondo_hero_movil.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__contenido {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "botones"
+    "texto";
+  min-height: calc(100vh - var(--alto-navbar));
+  padding-block: 1.5rem 2.5rem;
+}
+
+.hero__botones {
+  grid-area: botones;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero__botones .boton {
+  flex: 1;
+  padding: 0.65rem 0.35rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.hero__texto {
+  grid-area: texto;
+  align-self: end;
+  text-align: center;
+}
+
+.hero__titulo {
+  font-size: clamp(2.25rem, 9vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-blanco);
+  margin-bottom: 0.5rem;
+}
+
+.hero__universidad {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secundario);
+}
+
+.hero__descripcion {
+  margin-bottom: 0;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/*
+   9. INFORMACIÓN GENERAL
+*/
+.datos-clave {
+  margin-bottom: 2rem;
+}
+
+.tarjeta-dato {
+  padding: 1rem;
+  text-align: center;
+}
+
+.tarjeta-dato__valor {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-primario);
+}
+
+.tarjeta-dato__etiqueta {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-texto-suave);
+}
+
+.datos-programa {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 0.5rem 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: var(--color-primario);
+  border-radius: var(--radio);
+}
+
+.datos-programa__fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.datos-programa__fila:last-child {
+  border-bottom: none;
+}
+
+.datos-programa dt {
+  font-weight: 700;
+}
+
+.datos-programa dd {
+  margin: 0;
+}
+
+.documentos {
+  display: grid;
+  gap: 0.5rem;
+}
+
+
+/*
+   10. CONOCE EL PROGRAMA
+*/
+.programa__tarjetas {
+  display: grid;
+  grid-template-areas:
+    "proposito"
+    "mision"
+    "vision";
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.tarjeta-programa--proposito {
+  grid-area: proposito;
+}
+
+.tarjeta-programa--mision {
+  grid-area: mision;
+}
+
+.tarjeta-programa--vision {
+  grid-area: vision;
+}
+
+/* Título un poco más grande y texto justificado */
+.programa__tarjetas .tarjeta__titulo {
+  font-size: 1.25rem;
+}
+
+.programa__tarjetas p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+
+/*
+   11. PLAN DE ESTUDIOS
+*/
+.distribucion {
+  display: grid;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.distribucion__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "nombre valor"
+    "barra  barra";
+  gap: 0.35rem 1rem;
+}
+
+.distribucion__nombre {
+  grid-area: nombre;
+}
+
+.distribucion__valor {
+  grid-area: valor;
+  font-weight: 700;
+}
+
+.barra {
+  grid-area: barra;
+  height: 0.75rem;
+  overflow: hidden;
+  background-color: rgba(11, 107, 58, 0.12);
+  border-radius: 1rem;
+}
+
+.barra__relleno {
+  height: 100%;
+  background-color: var(--color-primario);
+  border-radius: 1rem;
+}
+
+/* Tabla de asignaturas dentro del acordeón */
+.tabla-contenedor {
+  padding: 0;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tabla th:last-child,
+.tabla td:last-child {
+  text-align: right;
+}
+
+.tabla thead th {
+  background-color: #49bb80;
+  color: var(--color-blanco);
+}
+
+.tabla tbody td {
+  color: var(--color-texto);
+}
+
+.tabla tbody tr:nth-child(odd) {
+  background-color: var(--color-fondo-suave);
+}
+
+.tabla tfoot th,
+.tabla tfoot td {
+  font-weight: 700;
+  border-bottom: none;
+  background-color: rgba(11, 107, 58, 0.12);
+  color: var(--color-primario-oscuro);
+}
+
+/* Botones debajo del acordeón */
+.plan__mas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+
+/*
+   12. INVERSIÓN
+*/
+.inversion__grilla {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+/* Cada tarjeta es una columna flex: así el botón siempre queda abajo */
+.tarjeta-inversion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* En flex el título se encoge a su texto; así la línea amarilla
+   ocupa todo el ancho, igual que en las otras tarjetas */
+.tarjeta-inversion .tarjeta__titulo {
+  align-self: stretch;
+}
+
+/* El valor en grande, como las cifras de Información general */
+.tarjeta-inversion__valor {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-primario);
+  margin-bottom: 1.25rem;
+}
+
+/* Versión para cuando el valor es una frase y no un número */
+.tarjeta-inversion__valor--texto {
+  font-size: 1.35rem;
+}
+
+/* La línea pequeña debajo del valor */
+.tarjeta-inversion__valor span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-texto-suave);
+}
+
+/* margin-top: auto empuja el botón al fondo de la tarjeta */
+.tarjeta-inversion__enlace {
+  margin-top: auto;
+  font-size: 0.95rem;
+}
+
+
+/*
+   13. PERFIL Y PROYECCIÓN
+   (usa .intro, .grilla y .tarjeta; solo cambian las columnas en 17 y 18)
+*/
+
+
+/*
+   14. VIDA UNIVERSITARIA
+*/
+.collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 240px 140px;
+  grid-template-areas:
+    "principal principal"
+    "foto2     foto3";
+  gap: 1rem;
+}
+
+.collage__item--principal {
+  grid-area: principal;
+}
+
+.collage__item--2 {
+  grid-area: foto2;
+}
+
+.collage__item--3 {
+  grid-area: foto3;
+}
+
+.collage__item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+
+/*
+   15. PREGUNTAS FRECUENTES
+*/
+.faq__contacto {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--color-blanco);
+  background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro));
+  border-radius: var(--radio);
+}
+
+.faq__contacto h3 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--color-blanco);
+}
+
+
+/*
+   16. FOOTER
+*/
+.footer {
+  padding-top: 3rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--color-footer);
+}
+
+.footer__grilla {
+  display: grid;
+  grid-template-areas:
+    "marca"
+    "enlaces"
+    "contacto";
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer__columna--marca {
+  grid-area: marca;
+}
+
+.footer__columna--enlaces {
+  grid-area: enlaces;
+}
+
+.footer__columna--contacto {
+  grid-area: contacto;
+}
+
+/* Línea separadora entre columnas apiladas (desde la segunda) */
+.footer__columna+.footer__columna {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer__titulo {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blanco);
+}
+
+/* Párrafo de la marca: justificado, con la última línea centrada */
+.footer__columna--marca p {
+  text-align: justify;
+  text-align-last: center;
+  hyphens: auto;
+}
+
+/* --- Otros de la Universidad de la Amazonia --- */
+.servicios {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada enlace es una pequeña tarjeta: ícono | nombre | flecha */
+.servicio {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "icono nombre flecha";
+  align-items: center;
+  gap: 0.35rem 0.85rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-blanco);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  transition: background-color var(--transicion), border-color var(--transicion);
+}
+
+.servicio:hover,
+.servicio:focus {
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-secundario);
+}
+
+.servicio__icono {
+  grid-area: icono;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  color: var(--color-secundario);
+  background-color: rgba(242, 183, 5, 0.15);
+  border-radius: 0.6rem;
+}
+
+.servicio__nombre {
+  grid-area: nombre;
+  font-weight: 700;
+}
+
+/* La descripción queda oculta; se mostrará en la vista de escritorio */
+.servicio__descripcion {
+  grid-area: descripcion;
+  display: none;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.servicio__flecha {
+  grid-area: flecha;
+  color: var(--color-secundario);
+  transition: transform var(--transicion);
+}
+
+.servicio:hover .servicio__flecha {
+  transform: translateX(4px);
+}
+
+/* --- Contacto --- */
+.footer address p {
+  margin-bottom: 0.35rem;
+}
+
+.footer address i {
+  margin-right: 0.5rem;
+  color: var(--color-secundario);
+}
+
+.footer__nombre {
+  font-weight: 700;
+  color: var(--color-blanco);
+}
+
+.footer__enlace {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+.footer__enlace:hover,
+.footer__enlace:focus {
+  color: var(--color-secundario);
+}
+
+/* Mapa: imagen que enlaza a Google Maps
+   (la imagen y el texto encima usan los estilos compartidos de la sección 3) */
+.footer__mapa {
+  position: relative;
+  display: block;
+  height: 160px;
+  margin-top: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radio);
+  text-decoration: none;
+  transition: border-color var(--transicion);
+}
+
+.footer__mapa:hover,
+.footer__mapa:focus {
+  border-color: var(--color-secundario);
+}
+
+.footer__mapa-figura {
+  height: 100%;
+  margin: 0;
+}
+
+.footer__mapa-texto i {
+  margin-right: 0.35rem;
+  color: var(--color-secundario);
+}
+
+/* Redes sociales: círculos de 44 × 44 px */
+.footer__redes {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+  color: var(--color-blanco);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: background-color var(--transicion), color var(--transicion), transform var(--transicion);
+}
+
+.footer__redes a:hover,
+.footer__redes a:focus {
+  color: var(--color-footer);
+  background-color: var(--color-secundario);
+  transform: translateY(-3px);
+}
+
+/* --- Barra inferior: copyright arriba y logo del ministerio debajo --- */
+.footer__inferior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer__inferior p {
+  margin: 0;
+}
+
+/* Logo del Ministerio sobre una "pastilla" blanca para que se vea en el fondo oscuro */
+.footer__mineducacion {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-blanco);
+  border-radius: 0.5rem;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.footer__mineducacion img {
+  height: 40px;
+  width: auto;
+}
+
+.footer__mineducacion:hover,
+.footer__mineducacion:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/*
+   17. TABLET (≥ 481px)
+*/
+@media (min-width: 481px) {
+
+  /* HERO */
+  .hero {
+    background-image:
+      linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.1) 35%,
+        rgba(0, 0, 0, 0.8) 100%),
+      url("../Imagenes/fondo_hero_tablet.png");
+  }
+
+  .hero__botones {
+    justify-content: space-around;
+  }
+
+  .hero__botones .boton {
+    flex: 0 1 auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .hero__texto {
+    max-width: 650px;
+    justify-self: center;
+    text-align: center;
+  }
+
+
+  /* GRILLAS */
+  .datos-clave,
+  .inversion__grilla,
+  .campo__grilla,
+  .experiencias__grilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cifras {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* INFORMACIÓN GENERAL */
+  /* Cuadro verde a la izquierda, botones a la derecha */
+  .informacion__detalle {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .datos-programa {
+    margin: 0;
+    /* quita el centrado y el margen inferior de mobile */
+  }
+
+  /* CONOCE EL PROGRAMA: propósito a todo el ancho; misión y visión lado a lado */
+  .programa__tarjetas {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "proposito proposito"
+      "mision    vision";
+  }
+
+  /* VIDA UNIVERSITARIA */
+  .collage {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-template-areas:
+      "principal foto2"
+      "principal foto3";
+  }
+
+  /* FOOTER */
+  .footer__grilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: "marca enlaces contacto";
+    gap: 2rem;
+  }
+
+  .footer__enlace {
+    overflow-wrap: anywhere;
+  }
+
+  /* Contenido a la izquierda... */
+  .footer__grilla {
+    text-align: left;
+  }
+
+  /* ...pero los títulos centrados */
+  .footer__titulo {
+    text-align: center;
+  }
+
+  /* El párrafo de la marca tenía la última línea centrada */
+  .footer__columna--marca p {
+    text-align: left;
+    text-align-last: auto;
+  }
+
+  .footer__columna+.footer__columna {
+    position: relative;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .footer__columna+.footer__columna::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1rem;
+    /* la mitad del gap de 2rem */
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .servicio {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .servicio__icono {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .servicio__flecha {
+    display: none;
+  }
+}
+
+
+/*
+   18. ESCRITORIO (≥ 1024px)
+*/
+@media (min-width: 1024px) {
+
+  /* NAVBAR */
+  .navbar__contenido {
+    flex-wrap: nowrap;
+    max-width: none;
+    padding-inline: 2rem;
+  }
+
+  .navbar__marca img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Menú a la derecha, con espacio entre botones y centrado verticalmente */
+  .navbar__menu {
+    margin-left: auto;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Cada enlace con estilo de botón: borde y texto verdes */
+  .navbar__menu .nav-link {
+    display: flex;
+    align-items: center;        /* texto centrado vertical */
+    justify-content: center;    /* texto centrado horizontal */
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    border-radius: 0.5rem;
+    transition: background-color var(--transicion), color var(--transicion);
+  }
+
+  /* Al pasar el mouse: fondo verde y texto blanco */
+  .navbar__menu .nav-link:hover,
+  .navbar__menu .nav-link:focus {
+    color: var(--color-blanco);
+    background-color: var(--color-primario);
+  }
+
+  /* HERO */
+
+  .hero__boton-programa {
+    display: none;
+  }
+
+  .hero__botones .boton {
+    padding: 1rem 3rem;
+    font-size: 1.35rem;
+  }
+
+  .hero__texto {
+    max-width: 1000px;
+  }
+
+  .hero__titulo {
+    font-size: 4.5rem;
+  }
+
+  /* BLOQUE INTRO (Programa y Perfil): imagen y texto lado a lado */
+  .intro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "imagen texto";
+  }
+
+  /* GRILLAS */
+  .datos-clave,
+  .campo__grilla,
+  .experiencias__grilla {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/*
+   19. ACCESIBILIDAD — MOVIMIENTO REDUCIDO
+*/
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

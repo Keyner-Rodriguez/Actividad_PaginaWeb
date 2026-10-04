@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Ingeniería de Sistemas - Universidad de la Amazonia</title>
+
+  <!-- Bootstrap: para el menu desplegable y los acordeones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons: librería de íconos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <header class="encabezado">
+    <nav class="navbar navbar-expand-lg">
+      <div class="contenedor navbar__contenido">
+
+        <a class="navbar-brand navbar__marca" href="#inicio">
+          <img src="./Imagenes/logo_universidad.png" alt="Logo Universidad de la Amazonia" width="40" height="40">
+          <span class="navbar__nombre">Ingeniería de Sistemas</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu_principal"
+          aria-controls="menu_principal" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu_principal">
+          <ul class="navbar-nav navbar__menu">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programa">Conoce el programa</a></li>
+            <li class="nav-item"><a class="nav-link" href="#plan_estudios">Plan de Estudios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#inversion">Valor de Matrícula</a></li>
+            <li class="nav-item"><a class="nav-link" href="#perfil_proyeccion">Perfil Profesional</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 02. HERO -->
+    <section id="inicio" class="hero">
+      <div class="contenedor hero__contenido">
+
+        <div class="hero__texto">
+          <h1 class="hero__titulo">Ingeniería de Sistemas</h1>
+          <p class="hero__universidad">Universidad de la Amazonia</p>
+          <p class="hero__descripcion">
+            Formación para crear soluciones tecnológicas e innovadoras
+            que aporten al desarrollo de la región amazónica.
+          </p>
+        </div>
+
+        <div class="hero__botones">
+          <a href="#programa" class="boton boton--claro hero__boton-programa">Conoce el programa</a>
+          <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/la-universidad/dependencias/departamentos/direccion-de-admision-registro-y-control-academico/118-inscripciones.html"
+            class="boton boton--claro" target="_blank" rel="noopener">
+            Inscribirse
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 03. INFORMACIÓN GENERAL -->
+    <section id="informacion_general" class="seccion informacion">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo">Información general</h2>
+        </header>
+
+        <ul class="grilla datos-clave">
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">10</span>
+            <span class="tarjeta-dato__etiqueta">Semestres</span>
+          </li>
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">178</span>
+            <span class="tarjeta-dato__etiqueta">Créditos</span>
+          </li>
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">Presencial</span>
+            <span class="tarjeta-dato__etiqueta">Modalidad</span>
+          </li>
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">Diurna</span>
+            <span class="tarjeta-dato__etiqueta">Jornada</span>
+          </li>
+        </ul>
+
+        <div class="informacion__detalle">
+
+          <dl class="datos-programa">
+            <div class="datos-programa__fila">
+              <dt>Título</dt>
+              <dd>Ingeniero(a) de Sistemas</dd>
+            </div>
+            <div class="datos-programa__fila">
+              <dt>Código SNIES</dt>
+              <dd>52384</dd>
+            </div>
+            <div class="datos-programa__fila">
+              <dt>Ubicación</dt>
+              <dd>Florencia, Caquetá — Campus Florencia</dd>
+            </div>
+          </dl>
+
+          <div class="documentos">
+            <a href="https://www.uniamazonia.edu.co/documentos/docs/Programas%20Academicos/Ingenieria%20de%20Sistemas/Resolucion%201562%20-%20Registro%20Calificado.pdf"
+              class="boton boton--primario" target="_blank" rel="noopener">
+              Registro calificado
+            </a>
+            <a href="https://www.uniamazonia.edu.co/documentos/docs/Consejo%20Superior/Acuerdos/2004/Acuerdo%20016%20-%20Por%20el%20cual%20se%20autoriza%20la%20creacion%20del%20programa%20academico%20de%20Ingenieria%20de%20Sistemas.pdf"
+              class="boton boton--primario" target="_blank" rel="noopener">
+              Acuerdo de creación
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 04. CONOCE EL PROGRAMA -->
+    <section id="programa" class="seccion programa">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo">Conoce el programa</h2>
+        </header>
+
+        <div class="intro">
+          <div class="intro__imagen">
+            <img src="./Imagenes/conoce_programa.jpg" class="foto"
+              alt="Estudiantes desarrollando un proyecto de software en grupo" width="800" height="600" loading="lazy">
+          </div>
+
+          <div class="intro__texto">
+            <h3 class="intro__subtitulo">¿Qué es Ingeniería de Sistemas?</h3>
+            <p>
+              Es la disciplina que se encarga del diseño, desarrollo, aplicación y mantenimiento de sistemas
+              informáticos y tecnológicos complejos para aprovechar la información
+              en organizaciones y comunidades.
+            </p>
+          </div>
+        </div>
+
+        <div class="programa__tarjetas">
+          <article class="tarjeta tarjeta-programa--proposito">
+            <h3 class="tarjeta__titulo">Propósito de formación</h3>
+            <p>El programa de Ingeniería de Sistemas de la Universidad de la Amazonia busca formar profesionales
+              integrales que combinen ciencias básicas, tecnología, investigación y humanidades. Su objetivo es
+              que los estudiantes interactúen positivamente con su entorno a través de soluciones computacionales
+              innovadoras basadas en las TIC, impulsando así el progreso económico, social y sustentable de la región
+              amazónica y del país.</p>
+          </article>
+
+          <article class="tarjeta tarjeta-programa--mision">
+            <h3 class="tarjeta__titulo">Misión</h3>
+            <p>El programa académico Ingeniería de Sistemas de la Universidad de la Amazonia, asume como encargo social
+              la formación de profesionales íntegros, con capacidad para crear, innovar, formular y solucionar
+              problemáticas organizacionales y productivas, apoyados en el desarrollo de sistemas de información
+              soportados en las diferentes tecnologías informáticas, con el propósito de contribuir al desarrollo
+              social, económico y tecnológico de la región amazónica y del país. </p>
+          </article>
+
+          <article class="tarjeta tarjeta-programa--vision">
+            <h3 class="tarjeta__titulo">Visión</h3>
+            <p>Ingeniería de Sistemas será un programa académico en permanente acreditación académica y social, líder en
+              la formación integral de profesionales, competentes en el campo académico, investigativo y humanístico;
+              comprometidos con el desarrollo tecnológico de la región amazónica y del país apoyados en tecnologías de
+              información.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05. PLAN DE ESTUDIOS  (el acordeón es de Bootstrap) -->
+    <section id="plan_estudios" class="seccion plan">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo">Plan de estudios</h2>
+          <p class="seccion__intro">Conoce las asignaturas de tu formación profesional.</p>
+        </header>
+
+        <!-- Cifras -->
+        <ul class="grilla cifras">
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">10</span>
+            <span class="tarjeta-dato__etiqueta">Semestres</span>
+          </li>
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">178</span>
+            <span class="tarjeta-dato__etiqueta">Créditos</span>
+          </li>
+          <li class="tarjeta-dato">
+            <span class="tarjeta-dato__valor">51</span>
+            <span class="tarjeta-dato__etiqueta">Cursos</span>
+          </li>
+        </ul>
+
+
+        <h3 class="bloque__titulo">Distribución de los créditos</h3>
+
+        <ul class="distribucion">
+          <li class="distribucion__item">
+            <span class="distribucion__nombre">Ciencias básicas</span>
+            <span class="distribucion__valor">36</span>
+            <div class="barra" role="progressbar" aria-label="Ciencias básicas: 36 créditos" aria-valuenow="36"
+              aria-valuemin="0" aria-valuemax="178">
+              <div class="barra__relleno" style="width: 20.2%"></div>
+            </div>
+          </li>
+
+          <li class="distribucion__item">
+            <span class="distribucion__nombre">Básicas de ingeniería</span>
+            <span class="distribucion__valor">35</span>
+            <div class="barra" role="progressbar" aria-label="Básicas de ingeniería: 35 créditos" aria-valuenow="35"
+              aria-valuemin="0" aria-valuemax="178">
+              <div class="barra__relleno" style="width: 19.7%"></div>
+            </div>
+          </li>
+
+          <li class="distribucion__item">
+            <span class="distribucion__nombre">Ingeniería aplicada</span>
+            <span class="distribucion__valor">77</span>
+            <div class="barra" role="progressbar" aria-label="Ingeniería aplicada: 77 créditos" aria-valuenow="77"
+              aria-valuemin="0" aria-valuemax="178">
+              <div class="barra__relleno" style="width: 43.3%"></div>
+            </div>
+          </li>
+
+          <li class="distribucion__item">
+            <span class="distribucion__nombre">Socio-humanísticas</span>
+            <span class="distribucion__valor">20</span>
+            <div class="barra" role="progressbar" aria-label="Socio-humanísticas: 20 créditos" aria-valuenow="20"
+              aria-valuemin="0" aria-valuemax="178">
+              <div class="barra__relleno" style="width: 11.2%"></div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Acordeón de semestres (Bootstrap) -->
+        <div class="accordion" id="acordeon_plan">
+
+          <!-- Semestre 1 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#semestre_1" aria-expanded="false" aria-controls="semestre_1">
+                Semestre I
+              </button>
+            </h3>
+            <div id="semestre_1" class="accordion-collapse collapse" data-bs-parent="#acordeon_plan">
+              <div class="accordion-body tabla-contenedor">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Créditos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Comunicación</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Deporte y Cultura</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Matemáticas I</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Física I</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Biología General</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Introducción a la Ingeniería</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Lógica y Algoritmos I</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>18</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semestre 2 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#semestre_2" aria-expanded="false" aria-controls="semestre_2">
+                Semestre II
+              </button>
+            </h3>
+            <div id="semestre_2" class="accordion-collapse collapse" data-bs-parent="#acordeon_plan">
+              <div class="accordion-body tabla-contenedor">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Créditos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Constitución y Democracia</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Matemáticas II</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Física II</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Química I</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Lógica y Algoritmos II</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Teoría General de Sistemas</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>17</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semestre 3 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#semestre_3" aria-expanded="false" aria-controls="semestre_3">
+                Semestre III
+              </button>
+            </h3>
+            <div id="semestre_3" class="accordion-collapse collapse" data-bs-parent="#acordeon_plan">
+              <div class="accordion-body tabla-contenedor">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Créditos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Idioma Extranjero I</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Álgebra Lineal</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Matemáticas Discretas</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Análisis de Sistemas</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Estructura de Datos I</td>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>17</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semestre 4 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#semestre_4" aria-expanded="false" aria-controls="semestre_4">
+                Semestre IV
+              </button>
+            </h3>
+            <div id="semestre_4" class="accordion-collapse collapse" data-bs-parent="#acordeon_plan">
+              <div class="accordion-body tabla-contenedor">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Créditos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Ecuaciones Diferenciales</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Estadística para Ingeniería</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Ingeniería de Software I</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Sistemas Operativos</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Estructura de Datos II</td>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>18</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semestre 5 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#semestre_5" aria-expanded="false" aria-controls="semestre_5">
+                Semestre V
+              </button>
+            </h3>
+            <div id="semestre_5" class="accordion-collapse collapse" data-bs-parent="#acordeon_plan">
+              <div class="accordion-body tabla-contenedor">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Créditos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Idioma Extranjero II</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Métodos Numéricos</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Ingeniería de Software II</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Programación Web</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Diseño de Base de Datos</td>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>18</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semestre 6 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#semestre_6" aria-expanded="false" aria-controls="semestre_6">
+                Semestre VI
+              </button>
+            </h3>
+            <div id="semestre_6" class="accordion-collapse collapse" data-bs-parent="#acordeon_plan">
+              <div class="accordion-body tabla-contenedor">
+                <table class="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">Asignatura</th>
+                      <th scope="col">Créditos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Filosofía e Historia de la Ciencia</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Modelos Determinísticos</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Ingeniería de Software III</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Programación Móvil</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>Redes de InformáticasI</td>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>18</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Enlace al plan de estudios completo -->
+        <div class="plan__mas">
+
+          <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/la-universidad/dependencias/departamentos/direccion-de-admision-registro-y-control-academico/228-aspirantes.html"
+            class="boton boton--primario" target="_blank" rel="noopener">
+            <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+            Ver requisitos de admisión
+            <span class="texto-oculto">(se abre en una pestaña nueva)</span>
+          </a>
+
+          <a href="https://www.uniamazonia.edu.co/documentos/docs/Consejo%20Academico/Acuerdos/2020/Acuerdo%2044%20Plan%20de%20Estudios%20de%20Ingenieria%20de%20Sistemas.pdf"
+            class="boton boton--primario" target="_blank" rel="noopener">
+            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            Plan de estudios completo
+            <span class="texto-oculto">(se abre en una pestaña nueva)</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INVERSIÓN -->
+    <section id="inversion" class="seccion inversion">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo">Inversión</h2>
+          <p class="seccion__intro">Conoce los valores para ingresar y estudiar en el programa.</p>
+        </header>
+
+        <div class="grilla inversion__grilla">
+
+          <article class="tarjeta tarjeta-inversion">
+            <i class="bi bi-pencil-square tarjeta__icono" aria-hidden="true"></i>
+            <h3 class="tarjeta__titulo">Valor de inscripción</h3>
+            <div class="tarjeta-inversion__valor">
+              8.0%
+              <span>del <abbr title="Salario Mínimo Mensual Legal Vigente">S.M.M.L.V.</abbr></span>
+            </div>
+            <a href="https://www.uniamazonia.edu.co/documentos/docs/Consejo%20Superior/Acuerdos/2012/Acuerdo%20002%20-%20Por%20el%20cual%20se%20fijan%20los%20derechos%20pecuniarios.pdf"
+              class="boton boton--primario tarjeta-inversion__enlace" target="_blank" rel="noopener">
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+              Ver Acuerdo 02 de 2012
+              <span class="texto-oculto">(PDF, se abre en una pestaña nueva)</span>
+            </a>
+          </article>
+
+          <article class="tarjeta tarjeta-inversion">
+            <i class="bi bi-cash-coin tarjeta__icono" aria-hidden="true"></i>
+            <h3 class="tarjeta__titulo">Valor de matrícula</h3>
+            <div class="tarjeta-inversion__valor tarjeta-inversion__valor--texto">
+              Según la tabla de matrícula
+              <span>Pregrado presencial</span>
+            </div>
+            <a href="https://www.uniamazonia.edu.co/documentos/docs/Consejo%20Superior/Acuerdos/2012/Acuerdo%20001%20-%20Por%20el%20cual%20se%20establece%20la%20tabla%20de%20matricula%20para%20estudiantes%20de%20pregrado%20presencial.pdf"
+              class="boton boton--primario tarjeta-inversion__enlace" target="_blank" rel="noopener">
+              <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+              Ver Acuerdo 01 de 2012
+              <span class="texto-oculto">(PDF, se abre en una pestaña nueva)</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PERFIL PROFESIONAL Y PROYECCIÓN-->
+    <section id="perfil_proyeccion" class="seccion perfil">
+      <div class="contenedor">
+
+        <!-- Perfil profesional: imagen + texto -->
+        <div class="intro">
+          <div class="intro__imagen">
+            <img src="./Imagenes/perfil.jpg" class="foto"
+              alt="Ingeniera de sistemas presentando un proyecto ante su equipo" width="800" height="600"
+              loading="lazy">
+          </div>
+
+          <div class="intro__texto">
+            <h3 class="intro__subtitulo">Perfil profesional</h3>
+            <p>El Ingeniero de Sistemas de la Universidad de la Amazonia es un profesional consciente de su entorno y de
+              las responsabilidades legales, éticas y sociales de su labor. Asimismo, se compromete con el aprendizaje
+              continuo y autónomo para adaptarse a la evolución constante de su disciplina y perfeccionar su desempeño
+              profesional.</p>
+          </div>
+        </div>
+
+        <!-- Campo laboral -->
+        <h3 class="bloque__titulo">¿Dónde puedes desarrollarte?</h3>
+
+        <div class="grilla campo__grilla">
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-code-slash tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Desarrollo de software</h4>
+            <p>Creación de sistemas de información y aplicaciones web, móviles y de escritorio.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-database tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Bases de datos</h4>
+            <p>Diseño, gestión y optimización de sistemas para almacenar y consultar información.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-hdd-network tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Redes y sistemas</h4>
+            <p>Configuración y administración de redes, servidores y sistemas de comunicación.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-kanban tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Gestión de proyectos</h4>
+            <p>Planeación y dirección de proyectos tecnológicos con metodologías profesionales.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-graph-up tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">IA y análisis de datos</h4>
+            <p>Sistemas inteligentes que aprenden de los datos y apoyan la toma de decisiones.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-shield-lock tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Seguridad informática</h4>
+            <p>Protección de la información y de los sistemas frente a riesgos y ataques.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-briefcase tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Consultoría tecnológica</h4>
+            <p>Asesoría a organizaciones para elegir e implementar soluciones tecnológicas.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-rocket-takeoff tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Emprendimiento</h4>
+            <p>Creación de empresas y productos de base tecnológica para la región.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!--08. VIDA UNIVERSITARIA -->
+    <section id="vida_universitaria" class="seccion vida">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo">Vida universitaria</h2>
+          <p class="seccion__intro">
+            Aprende, comparte, crea y vive la universidad.
+          </p>
+        </header>
+
+        <!-- Collage: la posición de cada foto la decide grid-template-areas -->
+        <div class="collage">
+          <figure class="collage__item collage__item--principal">
+            <img src="./Imagenes/campus.jpg" alt="zona verde del campus" width="800" height="600" loading="lazy">
+            <figcaption class="collage__texto">Campus Florencia</figcaption>
+          </figure>
+
+          <figure class="collage__item collage__item--2">
+            <img src="./Imagenes/semillero_robotica.jpeg" alt="Estudiantes trabajando en la sala de cómputo" width="400"
+              height="300" loading="lazy">
+            <figcaption class="collage__texto">Semilleros</figcaption>
+          </figure>
+
+          <figure class="collage__item collage__item--3">
+            <img src="./Imagenes/maratones_programacion.jpg" alt="Participantes en un maratón de programación"
+              width="400" height="300" loading="lazy">
+            <figcaption class="collage__texto">Maratones de programación</figcaption>
+          </figure>
+        </div>
+
+        <!-- Experiencias -->
+        <h3 class="bloque__titulo">Experiencias de la vida universitaria</h3>
+
+        <div class="grilla experiencias__grilla">
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-mortarboard tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Formación</h4>
+            <p>Aprende junto a compañeros y docentes en un ambiente de colaboración.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-pc-display tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Tecnología</h4>
+            <p>Desarrolla proyectos y soluciones en salas y laboratorios especializados.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-building tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Campus</h4>
+            <p>Disfruta de los espacios académicos, deportivos y culturales de la universidad.</p>
+          </article>
+
+          <article class="tarjeta tarjeta--centrada">
+            <i class="bi bi-people tarjeta__icono" aria-hidden="true"></i>
+            <h4 class="tarjeta__titulo">Comunidad</h4>
+            <p>Comparte con compañeros, profesores y egresados del programa.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 09. PREGUNTAS FRECUENTES  (el acordeón es de Bootstrap)-->
+    <section id="faq" class="seccion faq">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo">Preguntas frecuentes</h2>
+          <p class="seccion__intro">
+            Resuelve algunas de las dudas más comunes sobre Ingeniería de Sistemas.
+          </p>
+        </header>
+
+        <div class="accordion" id="acordeon_faq">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_1"
+                aria-expanded="false" aria-controls="faq_1">
+                ¿Dónde se desarrolla el programa?
+              </button>
+            </h3>
+            <div id="faq_1" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                En la sede principal de la Universidad de la Amazonia, en Florencia, Caquetá.
+                La modalidad es presencial y la jornada es diurna.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_2"
+                aria-expanded="false" aria-controls="faq_2">
+                ¿Qué requisitos debo cumplir para inscribirme?
+              </button>
+            </h3>
+            <div id="faq_2" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                Los requisitos de admisión se publican en cada convocatoria.
+                <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/la-universidad/dependencias/departamentos/direccion-de-admision-registro-y-control-academico/228-aspirantes.html"
+                  target="_blank" rel="noopener">
+                  Consulta los requisitos vigentes<span class="texto-oculto">(se abre en una pestaña nueva)</span></a>.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_3"
+                aria-expanded="false" aria-controls="faq_3">
+                ¿Cuál es el valor de la inscripción?
+              </button>
+            </h3>
+            <div id="faq_3" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                El valor se actualiza cada periodo académico.
+                <a href="https://www.uniamazonia.edu.co/documentos/docs/Consejo%20Superior/Acuerdos/2012/Acuerdo%20002%20-%20Por%20el%20cual%20se%20fijan%20los%20derechos%20pecuniarios.pdf"
+                  target="_blank" rel="noopener">
+                  Consulta el valor vigente<span class="texto-oculto">(se abre en una pestaña nueva)</span></a>.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_4"
+                aria-expanded="false" aria-controls="faq_4">
+                ¿Cuál es el valor de la matrícula?
+              </button>
+            </h3>
+            <div id="faq_4" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                El valor de la matrícula depende de las condiciones socioeconómicas de cada
+                estudiante y se liquida cada semestre.
+                <a href="https://www.uniamazonia.edu.co/documentos/docs/Consejo%20Superior/Acuerdos/2012/Acuerdo%20001%20-%20Por%20el%20cual%20se%20establece%20la%20tabla%20de%20matricula%20para%20estudiantes%20de%20pregrado%20presencial.pdf"
+                  target="_blank" rel="noopener">
+                  Consulta la información de matrícula<span class="texto-oculto">(se abre en una pestaña
+                    nueva)</span></a>.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_5"
+                aria-expanded="false" aria-controls="faq_5">
+                ¿Existen espacios de investigación?
+              </button>
+            </h3>
+            <div id="faq_5" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                Sí. El programa cuenta con líneas de investigación en sistemas de información, inteligencia artificial e
+                informática educativa.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_6"
+                aria-expanded="false" aria-controls="faq_6">
+                ¿Dónde consulto la información oficial del programa?
+              </button>
+            </h3>
+            <div id="faq_6" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                En el portal de la Universidad de la Amazonia.
+                <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/" target="_blank" rel="noopener">
+                  Ir a la página oficial<span class="texto-oculto">(se abre en una pestaña nueva)</span></a>.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_7"
+                aria-expanded="false" aria-controls="faq_7">
+                ¿Con quién puedo comunicarme?
+              </button>
+            </h3>
+            <div id="faq_7" class="accordion-collapse collapse" data-bs-parent="#acordeon_faq">
+              <div class="accordion-body">
+                Con la coordinación del programa Paula Andrea Chica Murcia.
+                <a href="#contacto">Ver datos de contacto</a>.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="faq__contacto">
+          <h3>¿Tienes otra pregunta?</h3>
+          <a href="#contacto" class="boton boton--secundario">Contáctanos</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- 10. FOOTER + CONTACTO -->
+  <footer id="contacto" class="footer">
+    <div class="contenedor">
+
+      <div class="footer__grilla">
+
+        <div class="footer__columna footer__columna--marca">
+          <h2 class="footer__titulo">Ingeniería de Sistemas</h2>
+          <p>
+            Universidad de la Amazonia.<br>
+            Formación profesional en tecnología para la región amazónica.
+          </p>
+        </div>
+
+        <div class="footer__columna footer__columna--enlaces">
+          <h2 class="footer__titulo">Otros de la Universidad de la Amazonia</h2>
+
+          <ul class="servicios">
+            <li>
+              <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/" class="servicio" target="_blank"
+                rel="noopener">
+                <span class="servicio__icono"><i class="bi bi-globe2" aria-hidden="true"></i></span>
+                <span class="servicio__nombre">Página web</span>
+                <span class="servicio__descripcion">Noticias, trámites, convocatorias e información oficial de la
+                  universidad.</span>
+                <i class="bi bi-arrow-right servicio__flecha" aria-hidden="true"></i>
+                <span class="texto-oculto">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/ingreso-al-correo.html" class="servicio"
+                target="_blank" rel="noopener">
+                <span class="servicio__icono"><i class="bi bi-envelope-fill" aria-hidden="true"></i></span>
+                <span class="servicio__nombre">Correo institucional</span>
+                <span class="servicio__descripcion">Comunicaciones oficiales, calendario, archivos y herramientas
+                  colaborativas.</span>
+                <i class="bi bi-arrow-right servicio__flecha" aria-hidden="true"></i>
+                <span class="texto-oculto">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://aulaextendida.uniamazonia.edu.co/aulaextendida/" class="servicio" target="_blank"
+                rel="noopener">
+                <span class="servicio__icono"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>
+                <span class="servicio__nombre">Aula extendida</span>
+                <span class="servicio__descripcion">Plataforma Moodle con actividades, contenidos y recursos de tus
+                  cursos.</span>
+                <i class="bi bi-arrow-right servicio__flecha" aria-hidden="true"></i>
+                <span class="texto-oculto">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__columna footer__columna--contacto">
+          <h2 class="footer__titulo">Contacto</h2>
+          <address>
+            <p class="footer__nombre">Paula Andrea Chica Murcia</p>
+            <p>Coordinadora del programa</p>
+            <p>
+              <i class="bi bi-telephone" aria-hidden="true"></i>
+              <a href="tel:+573204541936" class="footer__enlace">320 454 1936</a>
+            </p>
+            <p>
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+              <a href="mailto:pisistemas@uniamazonia.edu.co" class="footer__enlace">pisistemas@uniamazonia.edu.co</a>
+            </p>
+          </address>
+
+          <a href="https://maps.app.goo.gl/SzbByKxv8Mi6i4YE8" class="footer__mapa" target="_blank" rel="noopener">
+            <figure class="footer__mapa-figura">
+              <img src="./Imagenes/Mapa.jfif"
+                alt="Mapa con la ubicación de la Universidad de la Amazonia en Florencia, Caquetá" width="400"
+                height="300" loading="lazy">
+              <figcaption class="footer__mapa-texto">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                Florencia - Caquetá · Ver en Google Maps
+              </figcaption>
+            </figure>
+            <span class="texto-oculto">(abre Google Maps en una pestaña nueva)</span>
+          </a>
+
+          <ul class="footer__redes">
+            <li>
+              <a href="https://www.facebook.com/uniamazonia.edu.co/?locale=es_LA" target="_blank" rel="noopener"
+                aria-label="Facebook de la Universidad de la Amazonia">
+                <i class="bi bi-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/uniamazonia/?hl=es" target="_blank" rel="noopener"
+                aria-label="Instagram de la Universidad de la Amazonia">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/c/uamazonia" target="_blank" rel="noopener"
+                aria-label="YouTube de la Universidad de la Amazonia">
+                <i class="bi bi-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__inferior">
+        <p><small>Vigilada Ministerio de Educación - Copyright © 2022 uniamazonia.edu.co. - Todos los derechos
+            reservados.</small></p>
+
+        <a href="https://www.mineducacion.gov.co/portal/" class="footer__mineducacion" target="_blank" rel="noopener">
+          <img src="./Imagenes/mineducacion.jfif" alt="Ministerio de Educación Nacional de Colombia" width="160"
+            height="50" loading="lazy">
+          <span class="texto-oculto">(se abre en una pestaña nueva)</span>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript de Bootstrap: hace funcionar el menú hamburguesa y los acordeones -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Cierra el menú hamburguesa al seleccionar un enlace (mobile y tablet) -->
+  <!-- Cierra el menú hamburguesa al seleccionar un enlace (mobile y tablet) -->
+  <script>
+    const menu = document.getElementById('menu_principal');
+    const menuColapsable = bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false });
+
+    document.querySelectorAll('#menu_principal .nav-link').forEach(function (enlace) {
+      enlace.addEventListener('click', function () {
+        // Solo lo cierra si está abierto (en escritorio el menú no se colapsa)
+        if (menu.classList.contains('show')) {
+          menuColapsable.hide();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
